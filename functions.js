@@ -147,5 +147,5 @@ function indexOf(input1) {
 function typeofVar(input1) {
    let a = 21;
 
-   console.log();
+   console.log(typeof);
 }
