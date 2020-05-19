@@ -1,8 +1,9 @@
 // counting cards
 // if count is positive, then Bet
 // if count is 0 or negative, then Hold
-var count = 0;
+
 function countingCards(input1, input2) {
+   var count = 0;
    switch (input1) {
       case 2:
       case 3:
@@ -25,14 +26,80 @@ function countingCards(input1, input2) {
          break;
    }
 
-   return count + (count > 0 ? " Bet" : " Hold");
+   switch (input2) {
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+         count += 1;
+         break;
+      case 7:
+      case 8:
+      case 9:
+         count += 0;
+         break;
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+         count -= 1;
+         break;
+   }
+
+   if (count > 0) {
+      return count + " Bet";
+   } else {
+      return count + " Hold";
+   }
 }
 
 // profile lookup
-// need to do
+
+function profileLookup(input1, input2) {
+   var contacts = [
+      {
+         firstName: "Akira",
+         lastName: "Laine",
+         number: "0543236543",
+         likes: ["Pizza", "Coding", "Brownie Points"],
+      },
+      {
+         firstName: "Harry",
+         lastName: "Potter",
+         number: "0994372684",
+         likes: ["Hogwarts", "Magic", "Hagrid"],
+      },
+      {
+         firstName: "Sherlock",
+         lastName: "Holmes",
+         number: "0487345643",
+         likes: ["Intriguing Cases", "Violin"],
+      },
+      {
+         firstName: "Kristian",
+         lastName: "Vos",
+         number: "unknown",
+         likes: ["JavaScript", "Gaming", "Foxes"],
+      },
+   ];
+   // input1 = name
+   // input2 = property (ex: firstName, number)
+
+   for (var i = 0; i < contacts.length; i++) {
+      var contact = contacts[i];
+      if (contact.firstName === input1) {
+         if (contact[input2] != undefined) {
+            return contact[input2];
+         }
+         return "No such property";
+      }
+   }
+   return "No such contact";
+}
 
 // random number generator
-
 function randomNum(input1, input2) {
    // input1 = min number
    // input2 = max number
@@ -73,4 +140,12 @@ function indexOf(input1) {
    } else {
       return true;
    }
+}
+
+// typeof
+// need to fix - not sure how to do
+function typeofVar(input1) {
+   let a = 21;
+
+   console.log();
 }
