@@ -143,9 +143,7 @@ function indexOf(input1) {
 }
 
 // typeof
-// need to fix - not sure how to do
-function typeofVar(input1) {
-   let a = 21;
-
-   console.log(typeof);
+function checkType(input1) {
+   // input1 = calls on the varible you want to check the data type of
+   return typeof input1;
 }
